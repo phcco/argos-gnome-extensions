@@ -2,7 +2,7 @@
 
 Read more about Argos Gnome Extension at https://github.com/p-e-w/argos
 
-> This repo is focused on Argos/Linux compatible scripts, but some might work with BitBar
+> This repo is focused on Argos/Linux compatible scripts, but some might work with BitBar/xbar
 
 
 ## Using this repo
