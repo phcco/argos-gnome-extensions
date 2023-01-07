@@ -28,11 +28,14 @@ else:
     print("---")
     sorted = sorted(container_details, key=itemgetter('Names'))
     for container in sorted:
+        alive = container["Status"][:2] == "Up"
         line = ""
         line += "%5s:" % container["ID"][:5]
         line += "%40s" % container["Names"][:40]
         line += " %30s" % container["Image"][-30:]
         line += "%30s" % container["Status"][:30]
+        line += " 💚" if alive else " 💀"
         line += "|font=monospace"
-        line += " bash='%s' terminal=true" % ("docker exec -ti " +container["ID"] + " sh")
+        if alive:
+            line += " bash='%s' terminal=true" % ("docker exec -ti " +container["ID"] + " sh")
         print(line)
